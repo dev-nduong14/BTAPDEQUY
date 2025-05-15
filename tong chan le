@@ -1,0 +1,28 @@
+#include <stdio.h>
+int tongChan(int n) {
+    if (n == 0) return 0;
+    int so = n % 10;
+    if (so % 2 == 0)
+        return so + tongChan(n / 10);
+    else
+        return tongChan(n / 10);
+}
+int tongLe(int n) {
+    if (n == 0) return 0;
+    int so = n % 10;
+    if (so % 2 != 0)
+        return so + tongLe(n / 10);
+    else
+        return tongLe(n / 10);
+}
+
+int main() {
+    int n;
+    printf("Nhap so N: ");
+    scanf("%d", &n);
+
+    printf("Tong chu so chan: %d\n", tongChan(n));
+    printf("Tong chu so le: %d\n", tongLe(n));
+
+    return 0;
+}
