@@ -1,0 +1,14 @@
+#include <stdio.h>
+int n;
+int k;
+int gt(int n){
+	if(n == 0 || n == 1) return 1;
+	return n*gt(n-1);
+}
+int c(){
+	return gt(n) / (gt(k)*gt(n-k));
+}
+int main(){
+	scanf("%d%d",&n,&k);
+	printf("%d",c());
+}
